@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne D.O.T.S AI — YC Validated Our Thesis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f; --text: #f0f0f0; --dim: rgba(255,255,255,0.45);
+    --lavender: #C4B5FD; --mint: #6EE7B7; --peach: #FDBA74; --sky: #7DD3FC;
+    --yellow: #FFD700; --green: #4ADE80; --purple: #C084FC; --red: #F87171; --accent: #00e5a0;
+  }
+  body { background: var(--bg); font-family: 'Space Mono', monospace; color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+  .post { width: 1080px; height: 1080px; background: var(--bg); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+  .post::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; }
+  .corner-tl { position: absolute; top: 12px; left: 12px; width: 50px; height: 50px; border-top: 2px solid var(--yellow); border-left: 2px solid var(--yellow); opacity: 0.25; }
+  .corner-br { position: absolute; bottom: 12px; right: 12px; width: 50px; height: 50px; border-bottom: 2px solid var(--yellow); border-right: 2px solid var(--yellow); opacity: 0.25; }
+
+  .header { padding: 36px 44px 14px; position: relative; z-index: 2; }
+  .header-tag { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .dots-icon { display: grid; grid-template-columns: repeat(3, 6px); gap: 3px; }
+  .dots-icon span { width: 6px; height: 6px; border-radius: 50%; }
+  .dots-icon span:nth-child(1) { background: var(--lavender); }
+  .dots-icon span:nth-child(2) { background: var(--mint); }
+  .dots-icon span:nth-child(3) { background: var(--peach); }
+  .dots-icon span:nth-child(4) { background: var(--sky); }
+  .dots-icon span:nth-child(5) { background: var(--yellow); }
+  .dots-icon span:nth-child(6) { background: var(--green); }
+  .tag-label { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); font-weight: 700; }
+
+  .headline { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 36px; line-height: 1.1; margin-top: 4px; }
+  .headline .yc { color: var(--peach); }
+  .headline .grn { color: var(--green); }
+  .subtitle { font-family: 'Syne', sans-serif; font-style: italic; font-size: 14px; color: var(--dim); margin-top: 8px; }
+  .divider-line { height: 1px; background: linear-gradient(90deg, var(--peach), var(--green), var(--yellow), transparent); margin: 0 44px; opacity: 0.4; }
+
+  /* Two column comparison */
+  .compare-section { display: flex; gap: 16px; padding: 14px 44px 0; position: relative; z-index: 2; }
+  .compare-box { flex: 1; border-radius: 12px; padding: 20px 18px; }
+  .compare-box.them { background: rgba(253,186,116,0.04); border: 1px solid rgba(253,186,116,0.18); }
+  .compare-box.us { background: rgba(74,222,128,0.04); border: 1px solid rgba(74,222,128,0.18); }
+
+  .compare-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .compare-badge { font-family: 'Space Mono', monospace; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; }
+  .compare-badge.yc { background: rgba(253,186,116,0.15); color: var(--peach); border: 1px solid rgba(253,186,116,0.3); }
+  .compare-badge.z1 { background: rgba(74,222,128,0.15); color: var(--green); border: 1px solid rgba(74,222,128,0.3); }
+
+  .compare-title { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 16px; }
+  .compare-sub { font-family: 'Syne', sans-serif; font-style: italic; font-size: 11px; color: var(--dim); margin-bottom: 14px; }
+
+  .compare-point { display: flex; align-items: flex-start; gap: 8px; margin: 8px 0; }
+  .compare-icon { font-size: 13px; margin-top: 1px; flex-shrink: 0; }
+  .compare-text { font-size: 11.5px; line-height: 1.5; color: rgba(255,255,255,0.65); }
+  .compare-text strong { color: var(--text); }
+
+  /* Shared thesis bar */
+  .thesis-bar { margin: 14px 44px 0; padding: 16px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; position: relative; z-index: 2; }
+  .thesis-title { font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 1px; margin-bottom: 10px; }
+  .thesis-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .thesis-item { text-align: center; padding: 10px 6px; background: rgba(0,229,160,0.04); border: 1px solid rgba(0,229,160,0.1); border-radius: 8px; }
+  .thesis-check { font-size: 16px; margin-bottom: 4px; }
+  .thesis-label { font-size: 10px; color: rgba(255,255,255,0.6); line-height: 1.3; }
+
+  /* The stack */
+  .stack-section { margin: 14px 44px 0; position: relative; z-index: 2; }
+  .stack-title { font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; color: var(--yellow); letter-spacing: 1px; margin-bottom: 10px; }
+  .stack-flow { display: flex; align-items: center; gap: 0; }
+  .stack-block { flex: 1; padding: 12px 10px; text-align: center; font-size: 10px; line-height: 1.3; font-weight: 700; letter-spacing: 0.5px; }
+  .stack-block.b1 { background: rgba(253,186,116,0.1); border: 1px solid rgba(253,186,116,0.2); border-radius: 8px 0 0 8px; color: var(--peach); }
+  .stack-block.b2 { background: rgba(192,132,252,0.1); border: 1px solid rgba(192,132,252,0.2); border-top: 1px solid rgba(192,132,252,0.2); border-bottom: 1px solid rgba(192,132,252,0.2); color: var(--purple); }
+  .stack-block.b3 { background: rgba(74,222,128,0.1); border: 1px solid rgba(74,222,128,0.2); color: var(--green); }
+  .stack-block.b4 { background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.2); border-radius: 0 8px 8px 0; color: var(--yellow); }
+  .stack-arrow { font-size: 14px; color: var(--dim); margin: 0 -2px; position: relative; z-index: 3; }
+
+  /* Bottom CTA */
+  .cta-bar { margin: 14px 44px 0; background: linear-gradient(135deg, rgba(128,0,255,0.2), rgba(255,215,0,0.1)); border: 1.5px solid var(--yellow); border-radius: 8px; padding: 14px 24px; text-align: center; position: relative; z-index: 2; }
+  .cta-text { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 14px; color: var(--yellow); letter-spacing: 1px; }
+  .cta-sub-text { font-size: 11px; color: var(--dim); margin-top: 4px; }
+
+  .brand-footer { position: absolute; bottom: 28px; left: 44px; z-index: 10; }
+  .brand-name { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 14px; letter-spacing: 3px; }
+  .brand-name .d { color: var(--lavender); } .brand-name .o { color: var(--mint); }
+  .brand-name .t { color: var(--peach); } .brand-name .s { color: var(--sky); }
+  .brand-name .dot { color: rgba(255,255,255,0.25); margin: 0 2px; }
+  .save-cta { position: absolute; bottom: 28px; right: 44px; font-family: 'Space Mono', monospace; font-size: 11px; color: var(--dim); z-index: 10; letter-spacing: 1px; }
+
+  /* Glow */
+  .glow1 { position: absolute; width: 250px; height: 250px; border-radius: 50%; background: rgba(253,186,116,0.05); filter: blur(80px); top: -60px; right: -40px; pointer-events: none; }
+  .glow2 { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: rgba(74,222,128,0.04); filter: blur(80px); bottom: 100px; left: -30px; pointer-events: none; }
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-tag">
+      <div class="dots-icon"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <span class="tag-label">Authority</span>
+    </div>
+    <div class="headline"><span class="yc">Y COMBINATOR</span> JUST<br>VALIDATED <span class="grn">OUR THESIS.</span></div>
+    <div class="subtitle">a YC-backed startup raised money to build what we've been building for 8 months.</div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <!-- TWO COLUMN COMPARISON -->
+  <div class="compare-section">
+    <!-- THEM: Run Anywhere -->
+    <div class="compare-box them">
+      <div class="compare-header">
+        <span class="compare-badge yc">YC-BACKED</span>
+      </div>
+      <div class="compare-title">RUN ANYWHERE</div>
+      <div class="compare-sub">Edge AI deployment SDK</div>
+
+      <div class="compare-point">
+        <span class="compare-icon">⚙️</span>
+        <span class="compare-text"><strong>SDK for developers</strong><br>10-15 lines of code to deploy models on-device</span>
+      </div>
+      <div class="compare-point">
+        <span class="compare-icon">📡</span>
+        <span class="compare-text"><strong>OTA model updates</strong><br>Swap models without app store update</span>
+      </div>
+      <div class="compare-point">
+        <span class="compare-icon">📊</span>
+        <span class="compare-text"><strong>Telemetry</strong><br>Memory, battery, inference speed tracking</span>
+      </div>
+      <div class="compare-point">
+        <span class="compare-icon">🎯</span>
+        <span class="compare-text"><strong>Audience:</strong> Silicon Valley developers</span>
+      </div>
+    </div>
+
+    <!-- US: ZeroOne -->
+    <div class="compare-box us">
+      <div class="compare-header">
+        <span class="compare-badge z1">8 MONTHS BUILDING</span>
+      </div>
+      <div class="compare-title">ZEROONE D.O.T.S</div>
+      <div class="compare-sub">Full-stack private AI infrastructure</div>
+
+      <div class="compare-point">
+        <span class="compare-icon">🔐</span>
+        <span class="compare-text"><strong>AI Without Internet</strong><br>Private AI on every device — ₹0 cost</span>
+      </div>
+      <div class="compare-point">
+        <span class="compare-icon">🧠</span>
+        <span class="compare-text"><strong>AI Council</strong><br>5-6 models debating as your board of directors</span>
+      </div>
+      <div class="compare-point">
+        <span class="compare-icon">🏢</span>
+        <span class="compare-text"><strong>AI Office</strong><br>100 agents orchestrated by one manager AI</span>
+      </div>
+      <div class="compare-point">
+        <span class="compare-icon">🇮🇳</span>
+        <span class="compare-text"><strong>Audience:</strong> Every business in India</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHARED THESIS -->
+  <div class="thesis-bar">
+    <div class="thesis-title">THE SHARED THESIS — WHY THIS MATTERS</div>
+    <div class="thesis-grid">
+      <div class="thesis-item">
+        <div class="thesis-check">💰</div>
+        <div class="thesis-label"><strong>Zero Cost</strong><br>Inference on device,<br>not the cloud</div>
+      </div>
+      <div class="thesis-item">
+        <div class="thesis-check">🔒</div>
+        <div class="thesis-label"><strong>Full Privacy</strong><br>Data never leaves<br>your device</div>
+      </div>
+      <div class="thesis-item">
+        <div class="thesis-check">⚡</div>
+        <div class="thesis-label"><strong>Zero Latency</strong><br>No network needed,<br>instant response</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE FULL STACK -->
+  <div class="stack-section">
+    <div class="stack-title">THE FULL STACK WE'RE BUILDING</div>
+    <div class="stack-flow">
+      <div class="stack-block b1">EDGE<br>DEPLOYMENT<br><span style="opacity:0.6;font-weight:400;font-size:9px;">(Run Anywhere)</span></div>
+      <span class="stack-arrow">→</span>
+      <div class="stack-block b3">AI WITHOUT<br>INTERNET<br><span style="opacity:0.6;font-weight:400;font-size:9px;">(Pillar 01)</span></div>
+      <span class="stack-arrow">→</span>
+      <div class="stack-block b2">AI COUNCIL<br>+ AI OFFICE<br><span style="opacity:0.6;font-weight:400;font-size:9px;">(Pillar 02+03)</span></div>
+      <span class="stack-arrow">=</span>
+      <div class="stack-block b4">YOUR BIZ<br>RUNS ON AI<br><span style="opacity:0.6;font-weight:400;font-size:9px;">(₹0 · 24/7)</span></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-bar">
+    <div class="cta-text">THEY BUILD THE ENGINE. WE BUILD THE COCKPIT.</div>
+    <div class="cta-sub-text">💬 Comment VISION → we'll DM you the full breakdown</div>
+  </div>
+
+  <!-- BRAND -->
+  <div class="brand-footer">
+    <span class="brand-name">ZEROONE<span class="dot">·</span><span class="d">D</span><span class="dot">·</span><span class="o">O</span><span class="dot">·</span><span class="t">T</span><span class="dot">·</span><span class="s">S</span> AI</span>
+  </div>
+  <div class="save-cta">🔖 SAVE this</div>
+</div>
+</body>
+</html>

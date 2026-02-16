@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne D·O·T·S AI — Canva Brand Kit Setup Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --lavender: #C8B6FF;
+  --mint: #B8E0D2;
+  --peach: #FFCDB2;
+  --sky: #A2D2FF;
+  --rose: #FFB5C2;
+  --lemon: #FFF3B0;
+  --ink: #191924;
+  --plum: #2D1B4E;
+  --charcoal: #2A2A3C;
+  --cream50: #FDFCFA;
+  --cream100: #F8F7F4;
+  --sand200: #E8E6E0;
+  --stone500: #918D82;
+  --slate700: #4A4842;
+  /* Instagram/dark mode variants */
+  --ig-lavender: #C4B5FD;
+  --ig-mint: #6EE7B7;
+  --ig-peach: #FDBA74;
+  --ig-sky: #7DD3FC;
+  --ig-yellow: #FFD700;
+  --ig-green: #4ADE80;
+  --ig-purple: #C084FC;
+  --ig-red: #F87171;
+  --ig-accent: #00e5a0;
+  --ig-bg: #0a0a0f;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--cream50);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+.hero {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--plum) 50%, var(--charcoal) 100%);
+  padding: 60px 24px;
+  text-align: center;
+  color: white;
+}
+.hero .dot-matrix {
+  display: inline-grid;
+  grid-template-columns: repeat(3, 12px);
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.hero .dot-matrix span {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+.hero .dot-matrix span.active { background: var(--lavender); }
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hero h1 .dots-letters span:nth-child(1) { color: var(--lavender); }
+.hero h1 .dots-letters span:nth-child(2) { color: var(--mint); }
+.hero h1 .dots-letters span:nth-child(3) { color: var(--peach); }
+.hero h1 .dots-letters span:nth-child(4) { color: var(--sky); }
+.hero p {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  opacity: 0.7;
+  font-style: italic;
+}
+.hero .subtitle {
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  color: var(--ig-accent);
+  margin-top: 12px;
+  letter-spacing: 1px;
+}
+
+/* Sections */
+.section {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--sand200);
+}
+.section:last-child { border-bottom: none; }
+
+.section-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  color: var(--stone500);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.section-title em {
+  font-style: normal;
+  color: var(--plum);
+}
+.section-desc {
+  font-size: 14px;
+  color: var(--slate700);
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+
+/* Steps */
+.step {
+  background: white;
+  border: 1px solid var(--sand200);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.step-num {
+  background: var(--ink);
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.step-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+.step p {
+  font-size: 14px;
+  color: var(--slate700);
+  margin-bottom: 12px;
+}
+.step .path {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  background: var(--cream100);
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid var(--lavender);
+  margin-bottom: 12px;
+  color: var(--plum);
+}
+
+/* Color Grid */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.color-card {
+  background: white;
+  border: 1px solid var(--sand200);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+.color-card:hover { transform: translateY(-2px); }
+.color-swatch {
+  height: 80px;
+  position: relative;
+}
+.color-swatch .copy-hex {
+  position: absolute;
+  bottom: 6px; right: 6px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+.color-swatch .copy-hex:hover { background: rgba(0,0,0,0.8); }
+.color-info {
+  padding: 10px 12px;
+}
+.color-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+.color-hex {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  color: var(--stone500);
+}
+.color-use {
+  font-size: 11px;
+  color: var(--stone500);
+  margin-top: 4px;
+}
+
+.color-group-label {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--lavender);
+  display: inline-block;
+}
+
+/* Font showcase */
+.font-card {
+  background: white;
+  border: 1px solid var(--sand200);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.font-name {
+  font-size: 13px;
+  font-family: 'Space Mono', monospace;
+  color: var(--stone500);
+  margin-bottom: 4px;
+}
+.font-sample-orbitron {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.font-sample-syne {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--plum);
+  margin-bottom: 8px;
+}
+.font-sample-space {
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  color: var(--slate700);
+  margin-bottom: 8px;
+}
+.font-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.font-tag {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--cream100);
+  color: var(--slate700);
+}
+
+/* Table */
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 16px;
+}
+.ref-table th {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--stone500);
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--sand200);
+}
+.ref-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--cream100);
+  vertical-align: top;
+}
+.ref-table tr:hover { background: var(--cream100); }
+
+.mono {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  background: var(--cream100);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  padding: 0;
+}
+.checklist li {
+  padding: 10px 0;
+  padding-left: 32px;
+  position: relative;
+  border-bottom: 1px solid var(--cream100);
+  font-size: 14px;
+}
+.checklist li::before {
+  content: '☐';
+  position: absolute;
+  left: 0;
+  font-size: 18px;
+  color: var(--lavender);
+}
+
+/* Dark mode preview */
+.dark-preview {
+  background: var(--ig-bg);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 16px;
+}
+.dark-preview .color-grid .color-card {
+  background: #1a1a2e;
+  border-color: #2a2a3c;
+}
+.dark-preview .color-info { color: rgba(255,255,255,0.9); }
+.dark-preview .color-name { color: white; }
+.dark-preview .color-hex { color: rgba(255,255,255,0.6); }
+.dark-preview .color-use { color: rgba(255,255,255,0.4); }
+
+.note-box {
+  background: linear-gradient(135deg, rgba(200,182,255,0.1), rgba(162,210,255,0.1));
+  border: 1px solid var(--lavender);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 13px;
+}
+.note-box strong {
+  color: var(--plum);
+}
+
+/* Print/PDF optimization */
+@media print {
+  .hero { padding: 40px 24px; }
+  .color-swatch .copy-hex { display: none; }
+  .section { page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="dot-matrix">
+    <span class="active"></span><span></span><span></span>
+    <span></span><span class="active"></span><span></span>
+    <span></span><span></span><span class="active"></span>
+  </div>
+  <h1>ZEROONE <span class="dots-letters"><span>D</span>·<span>O</span>·<span>T</span>·<span>S</span></span> AI</h1>
+  <p>Canva Brand Kit Setup Guide</p>
+  <div class="subtitle">COPY → PASTE → BRAND KIT READY</div>
+</div>
+
+<div class="container">
+
+<!-- ═══ SECTION 1: HOW TO SET UP ═══ -->
+<div class="section">
+  <div class="section-num">01 — Getting Started</div>
+  <div class="section-title">Setup <em>Instructions</em></div>
+  <div class="section-desc">Follow these steps to set up your Canva Brand Kit. You'll need Canva Pro or Canva for Teams to access Brand Kit.</div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">1</div>
+      <div class="step-label">Open Brand Kit</div>
+    </div>
+    <div class="path">Canva → Brand Hub → Brand Kit (or canva.com/brand)</div>
+    <p>If you already have a Brand Kit at the URL you shared, open it and edit it. Otherwise, create a new one named <strong>"ZeroOne D·O·T·S AI"</strong>.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">2</div>
+      <div class="step-label">Upload Logos</div>
+    </div>
+    <p>Upload all logo variants you have (primary light, primary dark, horizontal, icon-only, social avatar). Canva supports SVG and PNG. Organize them by clicking "Add new logo" for each variant.</p>
+    <div class="note-box">
+      <strong>Tip:</strong> Upload the SVG versions first — they scale perfectly. Add PNG versions as fallbacks. Your logo variants include: Primary Light, Primary Dark, Horizontal Light, Horizontal Dark, Icon Only, Social Avatar.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">3</div>
+      <div class="step-label">Add Brand Colors</div>
+    </div>
+    <p>Click "Add a color palette" and enter each hex code from the tables below. Create separate palettes for the two modes:</p>
+    <p><strong>Palette 1:</strong> "Website / Editorial" (pastel on warm backgrounds)</p>
+    <p><strong>Palette 2:</strong> "Instagram / Social" (vibrant on dark backgrounds)</p>
+    <p><strong>Palette 3:</strong> "Neutrals & Anchors" (deep tones + warm neutrals)</p>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">4</div>
+      <div class="step-label">Add Brand Fonts</div>
+    </div>
+    <p>Under "Brand fonts," upload or search for each font. Set the hierarchy:</p>
+    <p>• <strong>Title:</strong> Orbitron (Bold 900) — always uppercase<br>
+       • <strong>Subtitle:</strong> Syne (SemiBold 600, italic) — editorial feel<br>
+       • <strong>Body:</strong> Space Mono (Regular 400) — data/monospace vibe</p>
+    <div class="note-box">
+      <strong>Important:</strong> Orbitron, Syne, and Space Mono are all on Google Fonts and should be available in Canva's font library. Search for them by name. If not found, upload the .ttf/.otf files from <a href="https://fonts.google.com" target="_blank">fonts.google.com</a>.
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-header">
+      <div class="step-num">5</div>
+      <div class="step-label">Set Brand Voice (Optional)</div>
+    </div>
+    <p>Under Brand Voice / Brand guidelines, add these notes:</p>
+    <p><em>"Contrarian, confident, data-backed. We challenge subscription AI with private infrastructure. Tone: bold but warm, technical but accessible. Tagline: Own your AI. Don't rent it. Never use: corporate jargon, passive voice, uncertain hedging."</em></p>
+  </div>
+</div>
+
+<!-- ═══ SECTION 2: COLORS — WEBSITE/EDITORIAL ═══ -->
+<div class="section">
+  <div class="section-num">02 — Color Palette</div>
+  <div class="section-title">Website & <em>Editorial</em> Colors</div>
+  <div class="section-desc">Warm pastels on light backgrounds. Each primary maps to a D.O.T.S. pillar. Copy hex codes directly into Canva.</div>
+
+  <div class="color-group-label">Primary Pastels (D.O.T.S. Mapped)</div>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#C8B6FF"><button class="copy-hex" onclick="navigator.clipboard.writeText('#C8B6FF')">#C8B6FF</button></div>
+      <div class="color-info"><div class="color-name">Lavender</div><div class="color-hex">#C8B6FF</div><div class="color-use">D · Data pillar</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#B8E0D2"><button class="copy-hex" onclick="navigator.clipboard.writeText('#B8E0D2')">#B8E0D2</button></div>
+      <div class="color-info"><div class="color-name">Mint</div><div class="color-hex">#B8E0D2</div><div class="color-use">O · Operations pillar</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFCDB2"><button class="copy-hex" onclick="navigator.clipboard.writeText('#FFCDB2')">#FFCDB2</button></div>
+      <div class="color-info"><div class="color-name">Peach</div><div class="color-hex">#FFCDB2</div><div class="color-use">T · Tech pillar</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#A2D2FF"><button class="copy-hex" onclick="navigator.clipboard.writeText('#A2D2FF')">#A2D2FF</button></div>
+      <div class="color-info"><div class="color-name">Sky</div><div class="color-hex">#A2D2FF</div><div class="color-use">S · Strategy pillar</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFB5C2"><button class="copy-hex" onclick="navigator.clipboard.writeText('#FFB5C2')">#FFB5C2</button></div>
+      <div class="color-info"><div class="color-name">Rose</div><div class="color-hex">#FFB5C2</div><div class="color-use">Featured · Creative</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFF3B0"><button class="copy-hex" onclick="navigator.clipboard.writeText('#FFF3B0')">#FFF3B0</button></div>
+      <div class="color-info"><div class="color-name">Lemon</div><div class="color-hex">#FFF3B0</div><div class="color-use">Highlights · Badges</div></div>
+    </div>
+  </div>
+
+  <div class="color-group-label">Deep Anchors</div>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#191924"><button class="copy-hex" onclick="navigator.clipboard.writeText('#191924')" style="color:white">#191924</button></div>
+      <div class="color-info"><div class="color-name">Ink</div><div class="color-hex">#191924</div><div class="color-use">Primary text · Dark BGs</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#2D1B4E"><button class="copy-hex" onclick="navigator.clipboard.writeText('#2D1B4E')" style="color:white">#2D1B4E</button></div>
+      <div class="color-info"><div class="color-name">Plum</div><div class="color-hex">#2D1B4E</div><div class="color-use">Premium · Hovers</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#2A2A3C"><button class="copy-hex" onclick="navigator.clipboard.writeText('#2A2A3C')" style="color:white">#2A2A3C</button></div>
+      <div class="color-info"><div class="color-name">Charcoal</div><div class="color-hex">#2A2A3C</div><div class="color-use">Footer · Cards dark</div></div>
+    </div>
+  </div>
+
+  <div class="color-group-label">Warm Neutrals</div>
+  <div class="color-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FDFCFA"><button class="copy-hex" onclick="navigator.clipboard.writeText('#FDFCFA')">#FDFCFA</button></div>
+      <div class="color-info"><div class="color-name">Cream 50</div><div class="color-hex">#FDFCFA</div><div class="color-use">Page background</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#F8F7F4"><button class="copy-hex" onclick="navigator.clipboard.writeText('#F8F7F4')">#F8F7F4</button></div>
+      <div class="color-info"><div class="color-name">Cream 100</div><div class="color-hex">#F8F7F4</div><div class="color-use">Card backgrounds</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#E8E6E0"><button class="copy-hex" onclick="navigator.clipboard.writeText('#E8E6E0')">#E8E6E0</button></div>
+      <div class="color-info"><div class="color-name">Sand 200</div><div class="color-hex">#E8E6E0</div><div class="color-use">Borders · Dividers</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#918D82"><button class="copy-hex" onclick="navigator.clipboard.writeText('#918D82')">#918D82</button></div>
+      <div class="color-info"><div class="color-name">Stone 500</div><div class="color-hex">#918D82</div><div class="color-use">Secondary text</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#4A4842"><button class="copy-hex" onclick="navigator.clipboard.writeText('#4A4842')">#4A4842</button></div>
+      <div class="color-info"><div class="color-name">Slate 700</div><div class="color-hex">#4A4842</div><div class="color-use">Body text</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 3: COLORS — INSTAGRAM/SOCIAL ═══ -->
+<div class="section">
+  <div class="section-num">03 — Color Palette</div>
+  <div class="section-title">Instagram & <em>Social</em> Colors</div>
+  <div class="section-desc">Vibrant, saturated versions for dark-mode social posts. These are higher contrast for mobile screens.</div>
+
+  <div class="dark-preview">
+    <div class="color-group-label" style="color:white; border-color: var(--ig-lavender);">Social Pastels (High Contrast)</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#C4B5FD"><button class="copy-hex" onclick="navigator.clipboard.writeText('#C4B5FD')">#C4B5FD</button></div>
+        <div class="color-info"><div class="color-name">Lavender</div><div class="color-hex">#C4B5FD</div><div class="color-use">D · Data</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#6EE7B7"><button class="copy-hex" onclick="navigator.clipboard.writeText('#6EE7B7')">#6EE7B7</button></div>
+        <div class="color-info"><div class="color-name">Mint</div><div class="color-hex">#6EE7B7</div><div class="color-use">O · Operations</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FDBA74"><button class="copy-hex" onclick="navigator.clipboard.writeText('#FDBA74')">#FDBA74</button></div>
+        <div class="color-info"><div class="color-name">Peach</div><div class="color-hex">#FDBA74</div><div class="color-use">T · Tech</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#7DD3FC"><button class="copy-hex" onclick="navigator.clipboard.writeText('#7DD3FC')">#7DD3FC</button></div>
+        <div class="color-info"><div class="color-name">Sky</div><div class="color-hex">#7DD3FC</div><div class="color-use">S · Strategy</div></div>
+      </div>
+    </div>
+
+    <div class="color-group-label" style="color:white; border-color: var(--ig-yellow);">Accent & Functional</div>
+    <div class="color-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background:#FFD700"><button class="copy-hex" onclick="navigator.clipboard.writeText('#FFD700')">#FFD700</button></div>
+        <div class="color-info"><div class="color-name">Gold</div><div class="color-hex">#FFD700</div><div class="color-use">Headlines · CTAs</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#4ADE80"><button class="copy-hex" onclick="navigator.clipboard.writeText('#4ADE80')">#4ADE80</button></div>
+        <div class="color-info"><div class="color-name">Green</div><div class="color-hex">#4ADE80</div><div class="color-use">Savings · Positive</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#C084FC"><button class="copy-hex" onclick="navigator.clipboard.writeText('#C084FC')">#C084FC</button></div>
+        <div class="color-info"><div class="color-name">Purple</div><div class="color-hex">#C084FC</div><div class="color-use">AI Council pillar</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#F87171"><button class="copy-hex" onclick="navigator.clipboard.writeText('#F87171')">#F87171</button></div>
+        <div class="color-info"><div class="color-name">Red</div><div class="color-hex">#F87171</div><div class="color-use">Costs · Problems</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#00e5a0"><button class="copy-hex" onclick="navigator.clipboard.writeText('#00e5a0')">#00e5a0</button></div>
+        <div class="color-info"><div class="color-name">Accent</div><div class="color-hex">#00e5a0</div><div class="color-use">Data highlights</div></div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background:#0a0a0f"><button class="copy-hex" onclick="navigator.clipboard.writeText('#0a0a0f')" style="color:white">#0a0a0f</button></div>
+        <div class="color-info"><div class="color-name">Dark BG</div><div class="color-hex">#0a0a0f</div><div class="color-use">Post background</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ SECTION 4: TYPOGRAPHY ═══ -->
+<div class="section">
+  <div class="section-num">04 — Typography</div>
+  <div class="section-title">Three <em>Voices</em></div>
+  <div class="section-desc">Each font serves a specific purpose. Set these as your brand fonts in Canva's Brand Kit typography section.</div>
+
+  <div class="font-card">
+    <div class="font-name">FONT 1 — TITLE / HEADING</div>
+    <div class="font-sample-orbitron">ORBITRON</div>
+    <div class="font-sample-orbitron" style="font-size:18px; letter-spacing:4px;">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</div>
+    <div class="font-meta">
+      <span class="font-tag">Google Fonts</span>
+      <span class="font-tag">Weight: 900 (Black)</span>
+      <span class="font-tag">ALWAYS UPPERCASE</span>
+      <span class="font-tag">Headlines · Titles · Numbers · Brand name</span>
+    </div>
+    <div class="note-box" style="margin-top:12px;">
+      <strong>Canva setup:</strong> Search "Orbitron" in brand fonts → Set as "Title" → Weight: Bold/Black → Transform: UPPERCASE
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">FONT 2 — SUBTITLE / EDITORIAL</div>
+    <div class="font-sample-syne">Syne — The editorial voice</div>
+    <div style="font-family:'Syne',sans-serif; font-size:16px; color:var(--slate700);">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</div>
+    <div class="font-meta">
+      <span class="font-tag">Google Fonts</span>
+      <span class="font-tag">Weight: 600 (SemiBold)</span>
+      <span class="font-tag">Often italic</span>
+      <span class="font-tag">Subtitles · Taglines · Editorial feel</span>
+    </div>
+    <div class="note-box" style="margin-top:12px;">
+      <strong>Canva setup:</strong> Search "Syne" → Set as "Subtitle" → Weight: SemiBold → Style: Italic for taglines
+    </div>
+  </div>
+
+  <div class="font-card">
+    <div class="font-name">FONT 3 — BODY / DATA</div>
+    <div class="font-sample-space">Space Mono — the data layer</div>
+    <div style="font-family:'Space Mono',monospace; font-size:13px; color:var(--slate700);">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789</div>
+    <div class="font-meta">
+      <span class="font-tag">Google Fonts</span>
+      <span class="font-tag">Weight: 400 (Regular) / 700 (Bold)</span>
+      <span class="font-tag">Monospace</span>
+      <span class="font-tag">Body · Data labels · Tags · Source citations</span>
+    </div>
+    <div class="note-box" style="margin-top:12px;">
+      <strong>Canva setup:</strong> Search "Space Mono" → Set as "Body" → Weight: Regular → Size: 11-14px range
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>⚠️ NEVER use:</strong> Inter, Roboto, Arial, Helvetica, or any system/default fonts. These break the brand identity.
+  </div>
+</div>
+
+<!-- ═══ SECTION 5: QUICK REFERENCE TABLE ═══ -->
+<div class="section">
+  <div class="section-num">05 — Quick Reference</div>
+  <div class="section-title">Copy-Paste <em>Cheat Sheet</em></div>
+  <div class="section-desc">Everything you need in one table. Click any hex code above to copy it to clipboard.</div>
+
+  <table class="ref-table">
+    <thead>
+      <tr><th>Element</th><th>Value</th><th>Where in Canva</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Brand Name</strong></td><td>ZeroOne D·O·T·S AI</td><td>Brand Kit → Name</td></tr>
+      <tr><td><strong>Tagline</strong></td><td>Own your AI. Don't rent it.</td><td>Brand Kit → Tagline</td></tr>
+      <tr><td><strong>Title Font</strong></td><td><span class="mono">Orbitron 900</span></td><td>Brand Fonts → Title</td></tr>
+      <tr><td><strong>Subtitle Font</strong></td><td><span class="mono">Syne 600 italic</span></td><td>Brand Fonts → Subtitle</td></tr>
+      <tr><td><strong>Body Font</strong></td><td><span class="mono">Space Mono 400</span></td><td>Brand Fonts → Body</td></tr>
+      <tr>
+        <td><strong>Palette 1</strong><br><small>Website/Editorial</small></td>
+        <td>
+          <span class="mono">#C8B6FF</span> <span class="mono">#B8E0D2</span> <span class="mono">#FFCDB2</span><br>
+          <span class="mono">#A2D2FF</span> <span class="mono">#FFB5C2</span> <span class="mono">#FFF3B0</span>
+        </td>
+        <td>Brand Colors → Palette 1</td>
+      </tr>
+      <tr>
+        <td><strong>Palette 2</strong><br><small>Instagram/Social</small></td>
+        <td>
+          <span class="mono">#C4B5FD</span> <span class="mono">#6EE7B7</span> <span class="mono">#FDBA74</span><br>
+          <span class="mono">#7DD3FC</span> <span class="mono">#FFD700</span> <span class="mono">#4ADE80</span><br>
+          <span class="mono">#C084FC</span> <span class="mono">#F87171</span> <span class="mono">#00e5a0</span>
+        </td>
+        <td>Brand Colors → Palette 2</td>
+      </tr>
+      <tr>
+        <td><strong>Palette 3</strong><br><small>Neutrals & Anchors</small></td>
+        <td>
+          <span class="mono">#191924</span> <span class="mono">#2D1B4E</span> <span class="mono">#2A2A3C</span><br>
+          <span class="mono">#FDFCFA</span> <span class="mono">#F8F7F4</span> <span class="mono">#E8E6E0</span><br>
+          <span class="mono">#918D82</span> <span class="mono">#4A4842</span> <span class="mono">#0a0a0f</span>
+        </td>
+        <td>Brand Colors → Palette 3</td>
+      </tr>
+      <tr><td><strong>IG Post BG</strong></td><td><span class="mono">#0a0a0f</span></td><td>Default background for social</td></tr>
+      <tr><td><strong>Website BG</strong></td><td><span class="mono">#FDFCFA</span></td><td>Default background for editorial</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ SECTION 6: D.O.T.S. COLOR MAPPING ═══ -->
+<div class="section">
+  <div class="section-num">06 — D.O.T.S. Framework</div>
+  <div class="section-title">Pillar <em>Color Mapping</em></div>
+  <div class="section-desc">Each letter of D.O.T.S. maps to a specific color. Use consistently across all content.</div>
+
+  <table class="ref-table">
+    <thead>
+      <tr><th>Letter</th><th>Pillar</th><th>Website Color</th><th>Social Color</th><th>Usage</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:20px; color:#C8B6FF;">D</td>
+        <td><strong>Data</strong></td>
+        <td><span class="mono">#C8B6FF</span> Lavender</td>
+        <td><span class="mono">#C4B5FD</span> Lavender</td>
+        <td>Data sovereignty, privacy, ownership content</td>
+      </tr>
+      <tr>
+        <td style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:20px; color:#B8E0D2;">O</td>
+        <td><strong>Operations</strong></td>
+        <td><span class="mono">#B8E0D2</span> Mint</td>
+        <td><span class="mono">#6EE7B7</span> Mint</td>
+        <td>Workflow, automation, efficiency content</td>
+      </tr>
+      <tr>
+        <td style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:20px; color:#FFCDB2;">T</td>
+        <td><strong>Tech</strong></td>
+        <td><span class="mono">#FFCDB2</span> Peach</td>
+        <td><span class="mono">#FDBA74</span> Peach</td>
+        <td>Infrastructure, models, hardware content</td>
+      </tr>
+      <tr>
+        <td style="font-family:'Orbitron',sans-serif; font-weight:900; font-size:20px; color:#A2D2FF;">S</td>
+        <td><strong>Strategy</strong></td>
+        <td><span class="mono">#A2D2FF</span> Sky</td>
+        <td><span class="mono">#7DD3FC</span> Sky</td>
+        <td>Business strategy, ROI, consulting content</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══ SECTION 7: CHECKLIST ═══ -->
+<div class="section">
+  <div class="section-num">07 — Setup Checklist</div>
+  <div class="section-title">Final <em>Checklist</em></div>
+
+  <ul class="checklist">
+    <li>Upload all logo variants (Primary Light, Dark, Horizontal, Icon, Avatar)</li>
+    <li>Add Palette 1 — Website/Editorial pastels (6 colors)</li>
+    <li>Add Palette 2 — Instagram/Social vibrant (9 colors)</li>
+    <li>Add Palette 3 — Neutrals & Anchors (8 colors)</li>
+    <li>Set Title font: Orbitron (900/Black, Uppercase)</li>
+    <li>Set Subtitle font: Syne (600/SemiBold, Italic)</li>
+    <li>Set Body font: Space Mono (400/Regular)</li>
+    <li>Add brand tagline: "Own your AI. Don't rent it."</li>
+    <li>Add brand voice description</li>
+    <li>Upload brand photography / templates if available</li>
+    <li>Test: Create a quick post to verify colors and fonts apply correctly</li>
+  </ul>
+</div>
+
+</div><!-- /container -->
+
+<!-- Footer -->
+<div style="background:var(--ink); color:rgba(255,255,255,0.4); text-align:center; padding:32px; font-family:'Space Mono',monospace; font-size:11px;">
+  ZEROONE D·O·T·S AI — CANVA BRAND KIT GUIDE<br>
+  <span style="color:var(--lavender);">D</span>ata · <span style="color:var(--mint);">O</span>perations · <span style="color:var(--mint);">T</span>ech · <span style="color:var(--sky);">S</span>trategy<br>
+  <span style="opacity:0.5; margin-top:8px; display:inline-block;">Own your AI. Don't rent it.</span>
+</div>
+
+<script>
+// Click-to-copy functionality for hex buttons
+document.querySelectorAll('.copy-hex').forEach(btn => {
+  btn.addEventListener('click', function() {
+    const hex = this.textContent;
+    navigator.clipboard.writeText(hex).then(() => {
+      const original = this.textContent;
+      this.textContent = 'Copied!';
+      setTimeout(() => this.textContent = original, 1200);
+    });
+  });
+});
+</script>
+
+</body>
+</html>

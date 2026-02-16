@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Private AI Revolution — Market Research 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0a0a0f;
+    --bg-card: #111118;
+    --accent: #00e5a0;
+    --accent2: #7c5cfc;
+    --accent3: #ff6b35;
+    --text: #e8e8ef;
+    --text-dim: #8888a0;
+    --lavender: #c4b5fd;
+    --mint: #6ee7b7;
+    --peach: #fbbf77;
+    --sky: #7dd3fc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-dark);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+  }
+
+  .carousel-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .carousel-container::-webkit-scrollbar { display: none; }
+
+  .slide {
+    min-width: 420px;
+    max-width: 420px;
+    min-height: 528px;
+    background: var(--bg-card);
+    border-radius: 24px;
+    padding: 36px 32px;
+    scroll-snap-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .slide::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 220%;
+    height: 220%;
+    background: radial-gradient(circle at 30% 30%, rgba(0,229,160,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Slide number */
+  .slide-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  /* SLIDE 1 — Cover */
+  .slide-cover {
+    background: linear-gradient(145deg, #0f0f1a 0%, #0a0a0f 50%, #0d1117 100%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .slide-cover .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .slide-cover h1 {
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #fff 0%, #00e5a0 60%, #7c5cfc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .slide-cover .subtitle {
+    font-size: 14px;
+    color: var(--text-dim);
+    max-width: 320px;
+    line-height: 1.6;
+    margin: 0 auto 28px;
+  }
+  .cover-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--accent);
+  }
+  .glow-orb {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.15;
+    pointer-events: none;
+  }
+  .glow-orb.green { background: var(--accent); top: -40px; right: -40px; }
+  .glow-orb.purple { background: var(--accent2); bottom: -60px; left: -40px; }
+
+  /* Section headers */
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .slide h2 {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  /* Big stat blocks */
+  .stat-hero {
+    text-align: center;
+    margin: 16px 0;
+  }
+  .stat-hero .number {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-hero .label {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    line-height: 1.4;
+  }
+  .stat-hero .source {
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: rgba(136,136,160,0.6);
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Stat grid */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 8px 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .stat-card .num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-card .num.purple { color: var(--accent2); }
+  .stat-card .num.orange { color: var(--accent3); }
+  .stat-card .num.lavender { color: var(--lavender); }
+  .stat-card .num.mint { color: var(--mint); }
+  .stat-card .num.peach { color: var(--peach); }
+  .stat-card .num.sky { color: var(--sky); }
+  .stat-card .desc {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 6px;
+    line-height: 1.35;
+  }
+
+  /* Bar chart visual */
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+  }
+  .bar-label {
+    font-size: 11px;
+    color: var(--text-dim);
+    width: 90px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .bar-track {
+    flex: 1;
+    height: 28px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--bg-dark);
+    transition: width 1s ease;
+  }
+  .bar-fill.green { background: linear-gradient(90deg, var(--accent), #34d399); }
+  .bar-fill.purple { background: linear-gradient(90deg, var(--accent2), #a78bfa); }
+  .bar-fill.orange { background: linear-gradient(90deg, var(--accent3), #fb923c); }
+  .bar-fill.sky { background: linear-gradient(90deg, var(--sky), #38bdf8); }
+  .bar-fill.peach { background: linear-gradient(90deg, var(--peach), #fcd34d); }
+
+  /* Cost comparison rows */
+  .cost-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .cost-row:last-child { border-bottom: none; }
+  .cost-item {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .cost-price {
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .cost-price.high { color: #ef4444; }
+  .cost-price.low { color: var(--accent); }
+
+  /* Comparison block */
+  .vs-block {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 12px;
+    margin: 12px 0;
+  }
+  .vs-side {
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    padding: 20px 14px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .vs-side.bad { border-color: rgba(239,68,68,0.2); }
+  .vs-side.good { border-color: rgba(0,229,160,0.2); }
+  .vs-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .vs-num {
+    font-size: 24px;
+    font-weight: 800;
+  }
+  .vs-num.red { color: #ef4444; }
+  .vs-num.green { color: var(--accent); }
+  .vs-divider {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-dim);
+  }
+
+  /* List items */
+  .check-list {
+    list-style: none;
+    margin: 8px 0;
+  }
+  .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--text);
+  }
+  .check-list li::before {
+    content: '→';
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Pill tags */
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .pill {
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid;
+  }
+  .pill.lav { color: var(--lavender); border-color: rgba(196,181,253,0.3); background: rgba(196,181,253,0.06); }
+  .pill.mint { color: var(--mint); border-color: rgba(110,231,183,0.3); background: rgba(110,231,183,0.06); }
+  .pill.peach { color: var(--peach); border-color: rgba(251,191,119,0.3); background: rgba(251,191,119,0.06); }
+  .pill.sky { color: var(--sky); border-color: rgba(125,211,252,0.3); background: rgba(125,211,252,0.06); }
+
+  /* Bottom note */
+  .bottom-note {
+    margin-top: auto;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    color: rgba(136,136,160,0.5);
+    line-height: 1.5;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  /* CTA Slide */
+  .slide-cta {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(145deg, #0d1117 0%, #0a0a0f 100%);
+  }
+  .cta-headline {
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .cta-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 320px;
+    margin: 0 auto 24px;
+  }
+  .cta-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--bg-dark);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+  }
+
+  /* Branding */
+  .brand-tag {
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+    font-family: 'Space Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: rgba(136,136,160,0.35);
+  }
+
+  /* Divider line */
+  .divider {
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 2px;
+    margin: 16px 0;
+  }
+
+  /* Industry row */
+  .industry-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .industry-row:last-child { border-bottom: none; }
+  .ind-name {
+    flex: 1;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .ind-size {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .ind-cagr {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(0,229,160,0.1);
+    color: var(--accent);
+  }
+
+  .highlight-box {
+    background: rgba(0,229,160,0.06);
+    border: 1px solid rgba(0,229,160,0.15);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 12px 0;
+    text-align: center;
+  }
+  .highlight-box .big {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--accent);
+  }
+  .highlight-box .small {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+
+  /* Scroll hint */
+  .scroll-hint {
+    text-align: center;
+    padding: 12px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<div class="scroll-hint">← SCROLL TO NAVIGATE SLIDES →</div>
+
+<div class="carousel-container">
+
+  <!-- SLIDE 1: Cover -->
+  <div class="slide slide-cover">
+    <div class="glow-orb green"></div>
+    <div class="glow-orb purple"></div>
+    <div class="eyebrow">Market Research • Feb 2026</div>
+    <h1>Why Private AI<br>Is a ₹ Trillion<br>Opportunity</h1>
+    <p class="subtitle">Real numbers from Gartner, IDC, Mordor Intelligence, Deloitte & more — proving why building private, local AI models is the biggest business opportunity of 2026.</p>
+    <div class="cover-badge">DATA-BACKED • 10 SLIDES</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 2: The Global AI Spend -->
+  <div class="slide">
+    <div class="slide-num">02 / 10</div>
+    <div class="section-label">The Big Picture</div>
+    <h2>Global AI Spend Is Exploding</h2>
+    
+    <div class="stat-hero">
+      <div class="number">$2.5T</div>
+      <div class="label">Total worldwide AI spending in 2026</div>
+      <div class="source">Source: Gartner, Jan 2026</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="num">$650B</div>
+        <div class="desc">Data center spending alone in 2026 (+31.7% YoY)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num purple">$6.15T</div>
+        <div class="desc">Total global IT spending in 2026</div>
+      </div>
+      <div class="stat-card">
+        <div class="num orange">36.9%</div>
+        <div class="desc">YoY jump in AI server spending</div>
+      </div>
+      <div class="stat-card">
+        <div class="num sky">$758B</div>
+        <div class="desc">AI infrastructure spend by 2029</div>
+      </div>
+    </div>
+
+    <div class="bottom-note">Sources: Gartner 2026 Forecast, IDC Q2 2025, Computerworld Feb 2026</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 3: The Problem — Subscription Trap -->
+  <div class="slide">
+    <div class="slide-num">03 / 10</div>
+    <div class="section-label">The Problem</div>
+    <h2>Enterprise AI Is Bleeding Money on Subscriptions</h2>
+
+    <div class="vs-block">
+      <div class="vs-side bad">
+        <div class="vs-label">Avg. Monthly AI Spend</div>
+        <div class="vs-num red">$85K</div>
+        <div class="desc" style="margin-top:6px;font-size:10px;">per org in 2025<br>(↑36% from 2024)</div>
+      </div>
+      <div class="vs-divider">→</div>
+      <div class="vs-side bad">
+        <div class="vs-label">Wasted</div>
+        <div class="vs-num red">21-50%</div>
+        <div class="desc" style="margin-top:6px;font-size:10px;">of cloud AI budgets sit unused</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <ul class="check-list">
+      <li><strong>65%</strong> of IT leaders report unexpected charges from AI pricing models</li>
+      <li>Microsoft Copilot: <strong>$30/user/month</strong> on top of existing Office 365</li>
+      <li>Adobe Creative Cloud: hiked to <strong>$70/month</strong> with mandatory AI</li>
+      <li>Google Workspace: <strong>16-33% price increase</strong> for AI features you can't opt out of</li>
+      <li>Only <strong>28%</strong> of finance leaders report clear ROI from AI investments</li>
+    </ul>
+
+    <div class="bottom-note">Sources: CloudZero 2025, Zylo SaaS Index, Deloitte 2025, CNBC Oct 2025</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 4: The SLM Opportunity -->
+  <div class="slide">
+    <div class="slide-num">04 / 10</div>
+    <div class="section-label">The Solution</div>
+    <h2>Small Language Models: The Counter-Move</h2>
+
+    <div class="stat-hero">
+      <div class="number" style="font-size:48px;">$9.4B</div>
+      <div class="label">SLM market value in 2025</div>
+      <div class="source">Source: Research & Markets 2025</div>
+    </div>
+
+    <div class="highlight-box">
+      <div class="big">→ $32B by 2034</div>
+      <div class="small">Growing at 25.7% CAGR (GMI) to 28.7% CAGR</div>
+    </div>
+
+    <div class="divider"></div>
+    <h2 style="font-size:15px; margin-bottom:12px;">SLM vs LLM Cost Savings</h2>
+    
+    <div class="bar-row">
+      <div class="bar-label">Training Cost</div>
+      <div class="bar-track"><div class="bar-fill green" style="width:75%;">↓ 75%</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Energy Use</div>
+      <div class="bar-track"><div class="bar-fill purple" style="width:60%;">↓ 60%</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Deployment</div>
+      <div class="bar-track"><div class="bar-fill orange" style="width:50%;">↓ 50%</div></div>
+    </div>
+    <div class="bar-row">
+      <div class="bar-label">Cost/Query</div>
+      <div class="bar-track"><div class="bar-fill sky" style="width:90%;">↓ 90%</div></div>
+    </div>
+
+    <div class="bottom-note">Sources: GMI 2025, MarketsAndMarkets, Grand View Research, AddWebSolution Dec 2025</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 5: Industry Markets -->
+  <div class="slide">
+    <div class="slide-num">05 / 10</div>
+    <div class="section-label">Industry Opportunity</div>
+    <h2>Top 8 Industries Ready for Private AI</h2>
+
+    <div class="industry-row">
+      <div class="ind-name">🏥 Healthcare AI</div>
+      <div class="ind-size" style="color: var(--mint);">$188B</div>
+      <div class="ind-cagr">22.2%</div>
+    </div>
+    <div class="industry-row">
+      <div class="ind-name">💰 Financial Services AI</div>
+      <div class="ind-size" style="color: var(--mint);">$130B</div>
+      <div class="ind-cagr">~20%</div>
+    </div>
+    <div class="industry-row">
+      <div class="ind-name">⚖️ Legal Tech</div>
+      <div class="ind-size" style="color: var(--lavender);">$35B</div>
+      <div class="ind-cagr">~18%</div>
+    </div>
+    <div class="industry-row">
+      <div class="ind-name">🏭 Manufacturing AI</div>
+      <div class="ind-size" style="color: var(--lavender);">$68B</div>
+      <div class="ind-cagr">~19%</div>
+    </div>
+    <div class="industry-row">
+      <div class="ind-name">🛒 Retail AI</div>
+      <div class="ind-size" style="color: var(--peach);">$40B</div>
+      <div class="ind-cagr">~17%</div>
+    </div>
+    <div class="industry-row">
+      <div class="ind-name">🚚 Logistics AI</div>
+      <div class="ind-size" style="color: var(--peach);">$64B</div>
+      <div class="ind-cagr">~15%</div>
+    </div>
+    <div class="industry-row">
+      <div class="ind-name">📡 Telecom AI</div>
+      <div class="ind-size" style="color: var(--sky);">$38B</div>
+      <div class="ind-cagr">~16%</div>
+    </div>
+    <div class="industry-row">
+      <div class="ind-name">⚡ Energy AI</div>
+      <div class="ind-size" style="color: var(--sky);">$7.8B</div>
+      <div class="ind-cagr">~18%</div>
+    </div>
+
+    <div style="margin-top:auto; font-size:11px; color: var(--text-dim); line-height: 1.4;">
+      <strong style="color:var(--accent);">Market sizes = projected by 2028-2030</strong><br>
+      Every one of these industries handles sensitive data that <em>cannot</em> leave their servers.
+    </div>
+
+    <div class="bottom-note">Sources: Mordor Intelligence, IDC, industry reports 2025-2026</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 6: Deployment Shift -->
+  <div class="slide">
+    <div class="slide-num">06 / 10</div>
+    <div class="section-label">The Shift Is Happening</div>
+    <h2>On-Premise & Hybrid AI Is the Fastest Growing Segment</h2>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="num">24%</div>
+        <div class="desc">CAGR for Hybrid & Edge AI deployments (fastest growing)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num purple">38%</div>
+        <div class="desc">of AI data center market is on-premise (2025)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num orange">52%</div>
+        <div class="desc">of LLM market runs on-premise deployments (2025)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num mint">75%</div>
+        <div class="desc">of enterprise data will be processed at the edge by 2025</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <div class="big" style="font-size:24px;">26.7% CAGR</div>
+      <div class="small">Hybrid deployment of LLMs — the fastest segment<br>driven by BFSI, healthcare & government</div>
+    </div>
+
+    <div style="font-size:12px; color: var(--text-dim); margin-top:8px; line-height:1.4;">
+      <strong style="color:var(--text);">Why?</strong> Data sovereignty laws, GDPR, HIPAA, India's DPDPA (2027), & the EU AI Act are forcing companies to keep AI local.
+    </div>
+
+    <div class="bottom-note">Sources: Mordor Intelligence 2025, Precedence Research, Straits Research 2026</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 7: Real ROI Numbers -->
+  <div class="slide">
+    <div class="slide-num">07 / 10</div>
+    <div class="section-label">Proof It Works</div>
+    <h2>Real ROI From Private AI Deployments</h2>
+
+    <div class="cost-row">
+      <div class="cost-item">📄 Document classification (finance)</div>
+      <div class="cost-price low">↓ 89% cost</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-item">⚡ Compliance processing speed</div>
+      <div class="cost-price low">2.5× faster</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-item">📦 Supply chain response latency</div>
+      <div class="cost-price low">↓ 47%</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-item">💬 Retail SLM chatbot ROI</div>
+      <div class="cost-price low">338% ROI</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-item">🏥 Healthcare: AI with full data control</div>
+      <div class="cost-price low">HIPAA ✓</div>
+    </div>
+    <div class="cost-row">
+      <div class="cost-item">☁️ Cloud budget used (vs projected)</div>
+      <div class="cost-price low">Only 20%</div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:auto;">
+      <div class="big" style="font-size:20px;">68% of SLM deployers</div>
+      <div class="small">report improved accuracy AND faster ROI<br>compared to LLM users</div>
+    </div>
+
+    <div class="bottom-note">Sources: MILL5 2025, AddWebSolution Dec 2025, industry case studies</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 8: India Opportunity -->
+  <div class="slide">
+    <div class="slide-num">08 / 10</div>
+    <div class="section-label">India Specific</div>
+    <h2>India's Sovereign AI Push = Massive Opportunity</h2>
+
+    <div class="pill-row">
+      <div class="pill lav">DPDPA 2027</div>
+      <div class="pill mint">IndiaAI Mission</div>
+      <div class="pill peach">38,000+ GPUs</div>
+      <div class="pill sky">Data Sovereignty</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <ul class="check-list">
+      <li>India's DPDPA becomes law <strong>May 2027</strong> — every business handling personal data must comply</li>
+      <li>Only <strong>2% of AI training data startups</strong> are in India vs 40% in US — massive gap</li>
+      <li>Economic Survey 2025-26 calls AI a <strong>"strategic priority"</strong>, warns against reliance on foreign AI platforms</li>
+      <li><strong>38,000+ GPUs</strong> made available at subsidized rates under IndiaAI Mission</li>
+      <li>Asia-Pacific: fastest growing region at <strong>31.4% CAGR</strong> for LLM market</li>
+      <li>India expected to witness <strong>fastest SLM growth</strong> globally (MarketsAndMarkets)</li>
+    </ul>
+
+    <div style="margin-top:auto; font-size:12px; color:var(--accent); font-weight:600;">
+      → This is India's "Jio Moment" for AI. Local, affordable, sovereign.
+    </div>
+
+    <div class="bottom-note">Sources: MeitY Nov 2025, Economic Survey 2025-26, IAPP, EY India 2026</div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 9: D.O.T.S Framework mapping -->
+  <div class="slide">
+    <div class="slide-num">09 / 10</div>
+    <div class="section-label">The Framework</div>
+    <h2>Where D.O.T.S AI Fits In</h2>
+
+    <div class="stat-grid" style="gap:12px;">
+      <div class="stat-card" style="border-color: rgba(196,181,253,0.3);">
+        <div class="num lavender" style="font-size:20px;">D</div>
+        <div class="desc"><strong style="color:var(--lavender);">Data</strong><br>Your data stays yours. DPDPA / GDPR / HIPAA ready from day 1.</div>
+      </div>
+      <div class="stat-card" style="border-color: rgba(110,231,183,0.3);">
+        <div class="num mint" style="font-size:20px;">O</div>
+        <div class="desc"><strong style="color:var(--mint);">Operations</strong><br>↓75% training cost. ↓90% cost per query. Real ROI.</div>
+      </div>
+      <div class="stat-card" style="border-color: rgba(251,191,119,0.3);">
+        <div class="num peach" style="font-size:20px;">T</div>
+        <div class="desc"><strong style="color:var(--peach);">Tech</strong><br>SLMs on your hardware. No internet needed. Edge-ready.</div>
+      </div>
+      <div class="stat-card" style="border-color: rgba(125,211,252,0.3);">
+        <div class="num sky" style="font-size:20px;">S</div>
+        <div class="desc"><strong style="color:var(--sky);">Strategy</strong><br>AI Council + AI Office. Multi-model orchestration.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div style="font-size:13px; line-height:1.6; color: var(--text-dim);">
+      While the world pays <span style="color:#ef4444; font-weight:700;">$85K/month</span> on AI subscriptions that waste <span style="color:#ef4444; font-weight:700;">21-50%</span> of budget...<br><br>
+      <span style="color:var(--accent); font-weight:700;">Private AI infrastructure</span> gives you the same power, on <em>your</em> terms, at a <em>fraction</em> of the cost.
+    </div>
+
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+  <!-- SLIDE 10: CTA -->
+  <div class="slide slide-cta">
+    <div class="glow-orb green"></div>
+    <div class="glow-orb purple"></div>
+    <div class="eyebrow" style="margin-bottom:24px;">The Bottom Line</div>
+    <div class="cta-headline">
+      <span style="color:var(--accent);">$2.5 Trillion</span> flows into AI in 2026.<br><br>
+      The question isn't <em>if</em> you need AI.<br>
+      It's whether you'll <span style="color:var(--accent2);">own it</span> or <span style="color:#ef4444;">rent it</span>.
+    </div>
+    <p class="cta-sub">
+      Build your private AI infrastructure.<br>
+      Keep your data sovereign.<br>
+      Cut costs by 75-90%.<br><br>
+      <strong style="color:var(--text);">The Jio Moment for AI is here.</strong>
+    </p>
+    <div class="cover-badge" style="margin-bottom:20px;">SAVE THIS POST ↗</div>
+    <br>
+    <div style="font-family:'Space Mono',monospace; font-size:10px; color:var(--text-dim); letter-spacing:1px;">
+      @ZEROONE.DOTS.AI
+    </div>
+    <div class="brand-tag">ZEROONE D.O.T.S AI</div>
+  </div>
+
+</div>
+
+<div class="scroll-hint" style="padding-bottom:32px;">
+  All data sourced from Gartner, IDC, Mordor Intelligence, Deloitte, CloudZero, MeitY, Economic Survey 2025-26 & more.
+</div>
+
+</body>
+</html>
