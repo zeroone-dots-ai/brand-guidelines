@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne — Story Template (Light / Cream)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #FDFCFA; --ink: #191924; --plum: #2D1B4E; --sand: #E8E6E0; --stone: #918D82;
+    --lavender: #C8B6FF; --mint: #B8E0D2; --peach: #FFCDB2; --sky: #A2D2FF; --rose: #FFB5C2;
+  }
+  body { background: #e8e6e0; font-family: 'DM Sans', sans-serif; color: var(--ink); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  .story { width: 1080px; height: 1920px; background: var(--cream); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 80px 56px; }
+  /* Aurora gradient header stripe */
+  .aurora-stripe { position: absolute; top: 0; left: 0; right: 0; height: 400px; background: linear-gradient(180deg, var(--lavender) 0%, var(--sky) 30%, var(--mint) 60%, transparent 100%); opacity: 0.15; }
+  /* Subtle dot pattern */
+  .story::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(25,25,36,0.03) 1px, transparent 1px); background-size: 24px 24px; }
+  .header { position: relative; z-index: 2; }
+  .tag { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--plum); font-weight: 700; margin-bottom: 20px; opacity: 0.6; }
+  .headline { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; font-size: 64px; line-height: 1.15; color: var(--ink); }
+  .headline .accent { color: var(--plum); }
+  .center-content { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 32px; }
+  .big-stat { font-family: 'Space Mono', monospace; font-weight: 700; font-size: 80px; color: var(--plum); }
+  .stat-label { font-family: 'DM Sans', sans-serif; font-size: 20px; color: var(--stone); }
+  .body-text { font-size: 20px; line-height: 1.8; color: var(--stone); max-width: 800px; }
+  .cta { padding: 20px 48px; background: var(--ink); border-radius: 12px; font-family: 'Space Mono', monospace; font-weight: 700; font-size: 14px; color: var(--cream); letter-spacing: 2px; }
+  /* Pillar dots decoration */
+  .pillar-dots { display: flex; gap: 12px; justify-content: center; }
+  .pillar-dots span { width: 12px; height: 12px; border-radius: 50%; }
+  .pillar-dots span:nth-child(1) { background: var(--lavender); }
+  .pillar-dots span:nth-child(2) { background: var(--mint); }
+  .pillar-dots span:nth-child(3) { background: var(--peach); }
+  .pillar-dots span:nth-child(4) { background: var(--sky); }
+  .footer { position: relative; z-index: 2; text-align: center; }
+  .brand { font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 3px; color: var(--stone); }
+  .brand strong { color: var(--ink); }
+  .swipe { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--stone); margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="aurora-stripe"></div>
+  <div class="header">
+    <div class="tag">ZEROONE D·O·T·S AI</div>
+    <h1 class="headline">[Your<br><span class="accent">Story</span><br>Headline]</h1>
+  </div>
+  <div class="center-content">
+    <div class="pillar-dots"><span></span><span></span><span></span><span></span></div>
+    <div class="big-stat">[STAT]</div>
+    <div class="stat-label">[What the stat means]</div>
+    <p class="body-text">[Your story content — light, warm, editorial tone]</p>
+    <div class="cta">[CALL TO ACTION]</div>
+  </div>
+  <div class="footer">
+    <div class="brand"><strong>ZEROONE</strong> D·O·T·S AI</div>
+    <div class="swipe">Swipe up →</div>
+  </div>
+</div>
+</body>
+</html>

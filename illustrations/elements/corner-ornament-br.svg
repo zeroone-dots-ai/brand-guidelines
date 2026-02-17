@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <!-- Bottom-right corner ornament — mirrors top-left -->
+  <!-- Vertical line -->
+  <line x1="72" y1="32" x2="72" y2="72" stroke="#A2D2FF" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+  <!-- Horizontal line -->
+  <line x1="32" y1="72" x2="72" y2="72" stroke="#A2D2FF" stroke-width="1.5" opacity="0.5" stroke-linecap="round"/>
+  <!-- Corner dot -->
+  <circle cx="72" cy="72" r="3" fill="#A2D2FF" opacity="0.6"/>
+  <!-- Decorative dots -->
+  <circle cx="72" cy="60" r="1.5" fill="#FFCDB2" opacity="0.35"/>
+  <circle cx="72" cy="48" r="1.5" fill="#B8E0D2" opacity="0.25"/>
+  <circle cx="60" cy="72" r="1.5" fill="#FFCDB2" opacity="0.35"/>
+  <circle cx="48" cy="72" r="1.5" fill="#C8B6FF" opacity="0.25"/>
+  <!-- 3x3 mini dot matrix in corner -->
+  <circle cx="56" cy="56" r="1" fill="#A2D2FF" opacity="0.15"/>
+  <circle cx="64" cy="56" r="1" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="56" cy="64" r="1" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="64" cy="64" r="1" fill="rgba(255,255,255,0.08)"/>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 8" width="400" height="8">
+  <!-- Fading dot row divider — pillar colors, fades at edges -->
+  <!-- Left fade in -->
+  <circle cx="40" cy="4" r="2" fill="#C8B6FF" opacity="0.15"/>
+  <circle cx="60" cy="4" r="2" fill="#C8B6FF" opacity="0.3"/>
+  <circle cx="80" cy="4" r="2" fill="#C8B6FF" opacity="0.5"/>
+  <!-- Lavender section -->
+  <circle cx="100" cy="4" r="2.5" fill="#C8B6FF" opacity="0.8"/>
+  <circle cx="120" cy="4" r="2.5" fill="#C8B6FF"/>
+  <!-- Transition to Mint -->
+  <circle cx="140" cy="4" r="2.5" fill="#C8B6FF" opacity="0.7"/>
+  <circle cx="160" cy="4" r="2.5" fill="#B8E0D2" opacity="0.7"/>
+  <circle cx="180" cy="4" r="2.5" fill="#B8E0D2"/>
+  <!-- Peach center -->
+  <circle cx="200" cy="4" r="3" fill="#FFCDB2"/>
+  <!-- Sky transition -->
+  <circle cx="220" cy="4" r="2.5" fill="#A2D2FF"/>
+  <circle cx="240" cy="4" r="2.5" fill="#A2D2FF" opacity="0.7"/>
+  <!-- Rose accent -->
+  <circle cx="260" cy="4" r="2.5" fill="#FFB5C2" opacity="0.7"/>
+  <circle cx="280" cy="4" r="2.5" fill="#FFB5C2"/>
+  <circle cx="300" cy="4" r="2.5" fill="#FFB5C2" opacity="0.8"/>
+  <!-- Right fade out -->
+  <circle cx="320" cy="4" r="2" fill="#FFF3B0" opacity="0.5"/>
+  <circle cx="340" cy="4" r="2" fill="#FFF3B0" opacity="0.3"/>
+  <circle cx="360" cy="4" r="2" fill="#FFF3B0" opacity="0.15"/>
+</svg>

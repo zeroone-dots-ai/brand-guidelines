@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne — Reel Cover Template</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f; --plum: #2D1B4E; --text: #f0f0f0; --dim: rgba(255,255,255,0.45);
+    --lavender: #C4B5FD; --mint: #6EE7B7; --peach: #FDBA74; --sky: #7DD3FC;
+    --yellow: #FFD700; --accent: #00e5a0;
+  }
+  body { background: #1a1a2e; font-family: 'Space Mono', monospace; color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  .reel { width: 1080px; height: 1920px; background: linear-gradient(180deg, var(--bg) 0%, var(--plum) 100%); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 80px 56px 160px; }
+  .reel::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px); background-size: 40px 40px; }
+  /* Central glow */
+  .central-glow { position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 800px; height: 800px; background: radial-gradient(circle, rgba(196,181,253,0.12) 0%, rgba(110,231,183,0.06) 40%, transparent 70%); }
+  .corner-tl { position: absolute; top: 24px; left: 24px; width: 50px; height: 50px; border-top: 2px solid var(--yellow); border-left: 2px solid var(--yellow); opacity: 0.25; }
+  .corner-br { position: absolute; bottom: 24px; right: 24px; width: 50px; height: 50px; border-bottom: 2px solid var(--yellow); border-right: 2px solid var(--yellow); opacity: 0.25; }
+  /* Large dot matrix in center */
+  .dots-hero { position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); display: grid; grid-template-columns: repeat(3, 60px); gap: 30px; }
+  .dots-hero span { width: 60px; height: 60px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .dots-hero span:nth-child(1) { background: var(--lavender); opacity: 0.8; }
+  .dots-hero span:nth-child(5) { background: var(--mint); opacity: 0.7; }
+  .dots-hero span:nth-child(9) { background: var(--peach); opacity: 0.6; }
+  .tag { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--yellow); font-weight: 700; margin-bottom: 20px; position: relative; z-index: 2; }
+  .headline { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 64px; line-height: 1.1; position: relative; z-index: 2; }
+  .headline .accent { color: var(--accent); }
+  .subtitle { font-family: 'Syne', sans-serif; font-size: 22px; color: var(--dim); margin-top: 20px; font-style: italic; position: relative; z-index: 2; line-height: 1.5; }
+  /* Play button indicator */
+  .play { position: absolute; top: 30%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3; }
+  .play::after { content: ''; width: 0; height: 0; border-left: 24px solid rgba(255,255,255,0.5); border-top: 14px solid transparent; border-bottom: 14px solid transparent; margin-left: 6px; }
+  .footer { position: absolute; bottom: 56px; left: 56px; right: 56px; display: flex; justify-content: space-between; z-index: 2; }
+  .brand { font-size: 12px; letter-spacing: 2px; color: var(--dim); }
+  .brand strong { color: var(--accent); }
+  .handle { font-size: 13px; color: var(--dim); }
+</style>
+</head>
+<body>
+<div class="reel">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="central-glow"></div>
+  <div class="dots-hero">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+  <div class="play"></div>
+  <div class="tag">[REEL TOPIC]</div>
+  <h1 class="headline">[YOUR <span class="accent">REEL</span><br>TITLE HERE]</h1>
+  <p class="subtitle">[One-line hook that makes people watch]</p>
+  <div class="footer">
+    <div class="brand"><strong>ZEROONE</strong> D·O·T·S AI</div>
+    <div class="handle">@zeroonedotsai</div>
+  </div>
+</div>
+</body>
+</html>

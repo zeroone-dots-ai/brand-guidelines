@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne — Carousel Cover Template</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f; --text: #f0f0f0; --dim: rgba(255,255,255,0.45);
+    --lavender: #C4B5FD; --mint: #6EE7B7; --peach: #FDBA74; --sky: #7DD3FC;
+    --yellow: #FFD700; --accent: #00e5a0;
+  }
+  body { background: #1a1a2e; font-family: 'Space Mono', monospace; color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  .post { width: 1080px; height: 1080px; background: var(--bg); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 80px; }
+  .post::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px); background-size: 40px 40px; }
+  /* Multi-color aurora orbs */
+  .orb-1 { position: absolute; top: -150px; left: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(196,181,253,0.15) 0%, transparent 70%); }
+  .orb-2 { position: absolute; bottom: -150px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(110,231,183,0.12) 0%, transparent 70%); }
+  .orb-3 { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; background: radial-gradient(circle, rgba(125,211,252,0.08) 0%, transparent 70%); }
+  .corner-tl { position: absolute; top: 16px; left: 16px; width: 50px; height: 50px; border-top: 2px solid var(--yellow); border-left: 2px solid var(--yellow); opacity: 0.25; }
+  .corner-br { position: absolute; bottom: 16px; right: 16px; width: 50px; height: 50px; border-bottom: 2px solid var(--yellow); border-right: 2px solid var(--yellow); opacity: 0.25; }
+  /* Dot matrix logo (large, centered) */
+  .dots-logo { display: grid; grid-template-columns: repeat(3, 20px); gap: 10px; margin-bottom: 40px; position: relative; z-index: 2; }
+  .dots-logo span { width: 20px; height: 20px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+  .dots-logo span:nth-child(1) { background: var(--lavender); }
+  .dots-logo span:nth-child(5) { background: var(--mint); }
+  .dots-logo span:nth-child(9) { background: var(--peach); }
+  .tag { font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: var(--yellow); font-weight: 700; margin-bottom: 24px; position: relative; z-index: 2; }
+  .headline { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 56px; line-height: 1.15; position: relative; z-index: 2; max-width: 800px; }
+  .headline .lav { color: var(--lavender); }
+  .headline .mnt { color: var(--mint); }
+  .subtitle { font-family: 'Syne', sans-serif; font-size: 20px; color: var(--dim); margin-top: 20px; font-style: italic; position: relative; z-index: 2; }
+  .slide-indicator { position: relative; z-index: 2; margin-top: 48px; display: flex; gap: 8px; }
+  .slide-indicator span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+  .slide-indicator span:first-child { background: var(--yellow); width: 24px; border-radius: 4px; }
+  .footer { position: absolute; bottom: 48px; left: 48px; right: 48px; display: flex; justify-content: space-between; z-index: 2; }
+  .brand { font-size: 11px; letter-spacing: 2px; color: var(--dim); }
+  .brand strong { color: var(--accent); }
+  .swipe { font-size: 13px; color: var(--dim); }
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="orb-1"></div>
+  <div class="orb-2"></div>
+  <div class="orb-3"></div>
+  <div class="dots-logo">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+  <div class="tag">[CAROUSEL TOPIC]</div>
+  <h1 class="headline">[YOUR <span class="lav">CAROUSEL</span><br><span class="mnt">TITLE</span> HERE]</h1>
+  <p class="subtitle">[Subtitle — what they'll learn by swiping]</p>
+  <div class="slide-indicator">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="footer">
+    <div class="brand"><strong>ZEROONE</strong> D·O·T·S AI</div>
+    <div class="swipe">Swipe →</div>
+  </div>
+</div>
+</body>
+</html>

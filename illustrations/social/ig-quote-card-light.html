@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne — Quote Card (Light)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #FDFCFA; --ink: #191924; --plum: #2D1B4E; --sand: #E8E6E0; --stone: #918D82;
+    --lavender: #C8B6FF; --mint: #B8E0D2; --peach: #FFCDB2; --sky: #A2D2FF; --rose: #FFB5C2;
+  }
+  body { background: #e8e6e0; font-family: 'DM Sans', sans-serif; color: var(--ink); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  .post { width: 1080px; height: 1080px; background: var(--cream); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px; }
+  /* Aurora gradient top accent */
+  .aurora-accent { position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--lavender), var(--sky), var(--mint), var(--peach)); }
+  .post::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(25,25,36,0.02) 1px, transparent 1px); background-size: 24px 24px; }
+  .quote-mark { font-family: 'Instrument Serif', Georgia, serif; font-size: 200px; line-height: 0.6; color: var(--lavender); opacity: 0.15; position: absolute; top: 80px; left: 80px; z-index: 1; }
+  .quote { font-family: 'Instrument Serif', Georgia, serif; font-size: 44px; line-height: 1.4; color: var(--ink); position: relative; z-index: 2; max-width: 800px; }
+  .attribution { margin-top: 40px; position: relative; z-index: 2; }
+  .author { font-family: 'Space Mono', monospace; font-size: 14px; letter-spacing: 2px; color: var(--plum); font-weight: 700; }
+  .role { font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--stone); margin-top: 6px; }
+  .dots { display: flex; gap: 8px; justify-content: center; margin-top: 32px; position: relative; z-index: 2; }
+  .dots span { width: 8px; height: 8px; border-radius: 50%; }
+  .dots span:nth-child(1) { background: var(--lavender); }
+  .dots span:nth-child(2) { background: var(--mint); }
+  .dots span:nth-child(3) { background: var(--peach); }
+  .dots span:nth-child(4) { background: var(--sky); }
+  .footer { position: absolute; bottom: 48px; left: 48px; right: 48px; display: flex; justify-content: space-between; z-index: 2; }
+  .brand { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 2px; color: var(--stone); }
+  .brand strong { color: var(--ink); }
+  .handle { font-size: 12px; color: var(--stone); }
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="aurora-accent"></div>
+  <div class="quote-mark">"</div>
+  <p class="quote">[Your quote goes here — elegant, editorial, warm]</p>
+  <div class="attribution">
+    <div class="author">[AUTHOR NAME]</div>
+    <div class="role">[Title / Role]</div>
+  </div>
+  <div class="dots"><span></span><span></span><span></span><span></span></div>
+  <div class="footer">
+    <div class="brand"><strong>ZEROONE</strong> D·O·T·S AI</div>
+    <div class="handle">@zeroonedotsai</div>
+  </div>
+</div>
+</body>
+</html>

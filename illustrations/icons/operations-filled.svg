@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="ops-glow" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#B8E0D2" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#B8E0D2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="100" height="100" rx="16" fill="#191924"/>
+  <rect x="10" y="10" width="80" height="80" rx="8" fill="url(#ops-glow)"/>
+  <!-- Main gear (center) -->
+  <circle cx="45" cy="48" r="18" fill="none" stroke="#B8E0D2" stroke-width="3"/>
+  <circle cx="45" cy="48" r="7" fill="#B8E0D2"/>
+  <!-- Gear teeth (8 dots around the gear) -->
+  <circle cx="45" cy="26" r="4" fill="#B8E0D2"/>
+  <circle cx="58" cy="31" r="4" fill="#B8E0D2"/>
+  <circle cx="63" cy="48" r="4" fill="#B8E0D2"/>
+  <circle cx="58" cy="65" r="4" fill="#B8E0D2"/>
+  <circle cx="45" cy="70" r="4" fill="#B8E0D2"/>
+  <circle cx="32" cy="65" r="4" fill="#B8E0D2"/>
+  <circle cx="27" cy="48" r="4" fill="#B8E0D2"/>
+  <circle cx="32" cy="31" r="4" fill="#B8E0D2"/>
+  <!-- Flow arrow (right side) -->
+  <line x1="68" y1="48" x2="86" y2="48" stroke="#B8E0D2" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="80,42 86,48 80,54" fill="none" stroke="#B8E0D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne — Results / Testimonial Post Template</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f; --text: #f0f0f0; --dim: rgba(255,255,255,0.45);
+    --lavender: #C4B5FD; --mint: #6EE7B7; --peach: #FDBA74; --sky: #7DD3FC;
+    --yellow: #FFD700; --green: #4ADE80; --accent: #00e5a0;
+  }
+  body { background: #1a1a2e; font-family: 'Space Mono', monospace; color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  .post { width: 1080px; height: 1080px; background: var(--bg); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 48px; }
+  .post::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px); background-size: 40px 40px; }
+  .glow { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; background: radial-gradient(circle, rgba(74,222,128,0.08) 0%, transparent 70%); }
+  .corner-tl { position: absolute; top: 16px; left: 16px; width: 40px; height: 40px; border-top: 1.5px solid var(--yellow); border-left: 1.5px solid var(--yellow); opacity: 0.25; }
+  .corner-br { position: absolute; bottom: 16px; right: 16px; width: 40px; height: 40px; border-bottom: 1.5px solid var(--yellow); border-right: 1.5px solid var(--yellow); opacity: 0.25; }
+  .header { position: relative; z-index: 2; }
+  .tag { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--yellow); font-weight: 700; margin-bottom: 12px; }
+  .headline { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 36px; line-height: 1.15; }
+  .headline .green { color: var(--green); }
+  /* Big result stat */
+  .result-section { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+  .big-number { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 120px; background: linear-gradient(135deg, var(--green), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
+  .result-label { font-family: 'Orbitron', sans-serif; font-size: 20px; color: var(--green); letter-spacing: 3px; margin-top: 12px; }
+  .result-context { font-family: 'Syne', sans-serif; font-size: 18px; color: var(--dim); margin-top: 20px; font-style: italic; max-width: 600px; line-height: 1.5; }
+  /* Metric pills */
+  .metrics { display: flex; gap: 16px; margin-top: 32px; }
+  .metric { padding: 14px 24px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; text-align: center; }
+  .metric-value { font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 22px; color: var(--accent); }
+  .metric-label { font-size: 10px; color: var(--dim); margin-top: 4px; letter-spacing: 1px; text-transform: uppercase; }
+  .footer { position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: flex-end; }
+  .brand { font-size: 11px; letter-spacing: 2px; color: var(--dim); }
+  .brand strong { color: var(--accent); }
+  .cta { font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700; color: var(--yellow); letter-spacing: 1px; padding: 10px 20px; border: 1px solid rgba(255,215,0,0.3); border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="glow"></div>
+  <div class="header">
+    <div class="tag">CLIENT RESULTS</div>
+    <h1 class="headline">[CLIENT NAME]: <span class="green">[RESULT]</span></h1>
+  </div>
+  <div class="result-section">
+    <div class="big-number">+[X]%</div>
+    <div class="result-label">MARGIN IMPROVEMENT</div>
+    <p class="result-context">[Brief description of what was achieved and how D.O.T.S made it happen]</p>
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-value">[X]</div>
+        <div class="metric-label">[Metric 1]</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">[X]</div>
+        <div class="metric-label">[Metric 2]</div>
+      </div>
+      <div class="metric">
+        <div class="metric-value">[X]</div>
+        <div class="metric-label">[Metric 3]</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="brand"><strong>ZEROONE</strong> D·O·T·S AI</div>
+    <div class="cta">DM "BUILD" →</div>
+  </div>
+</div>
+</body>
+</html>

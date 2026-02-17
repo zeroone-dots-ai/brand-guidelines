@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background -->
+  <rect width="100" height="100" rx="16" fill="#191924"/>
+  <!-- Main gear (center) -->
+  <circle cx="45" cy="48" r="18" fill="none" stroke="#B8E0D2" stroke-width="2"/>
+  <circle cx="45" cy="48" r="7" fill="none" stroke="#B8E0D2" stroke-width="2"/>
+  <!-- Gear teeth (8 circle outlines) -->
+  <circle cx="45" cy="26" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <circle cx="58" cy="31" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <circle cx="63" cy="48" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <circle cx="58" cy="65" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <circle cx="45" cy="70" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <circle cx="32" cy="65" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <circle cx="27" cy="48" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <circle cx="32" cy="31" r="4" fill="none" stroke="#B8E0D2" stroke-width="1.5"/>
+  <!-- Flow arrow -->
+  <line x1="68" y1="48" x2="86" y2="48" stroke="#B8E0D2" stroke-width="2" stroke-linecap="round"/>
+  <polyline points="80,42 86,48 80,54" fill="none" stroke="#B8E0D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

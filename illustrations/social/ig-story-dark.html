@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne — Story Template (Dark / Cosmos)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f; --plum: #2D1B4E; --text: #f0f0f0; --dim: rgba(255,255,255,0.45);
+    --lavender: #C4B5FD; --mint: #6EE7B7; --peach: #FDBA74; --sky: #7DD3FC; --accent: #00e5a0;
+  }
+  body { background: #1a1a2e; font-family: 'Space Mono', monospace; color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  .story { width: 1080px; height: 1920px; background: linear-gradient(180deg, var(--bg) 0%, var(--plum) 50%, var(--bg) 100%); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 80px 56px; }
+  /* Dot matrix overlay */
+  .story::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(196,181,253,0.03) 1px, transparent 1px); background-size: 30px 30px; }
+  /* Glowing orbs */
+  .orb-1 { position: absolute; top: 200px; left: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(196,181,253,0.12) 0%, transparent 70%); }
+  .orb-2 { position: absolute; bottom: 300px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(110,231,183,0.1) 0%, transparent 70%); }
+  .orb-3 { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; background: radial-gradient(circle, rgba(125,211,252,0.06) 0%, transparent 70%); }
+  .corner-tl { position: absolute; top: 24px; left: 24px; width: 50px; height: 50px; border-top: 1.5px solid var(--lavender); border-left: 1.5px solid var(--lavender); opacity: 0.2; }
+  .corner-br { position: absolute; bottom: 24px; right: 24px; width: 50px; height: 50px; border-bottom: 1.5px solid var(--mint); border-right: 1.5px solid var(--mint); opacity: 0.2; }
+  .header { position: relative; z-index: 2; }
+  .tag { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 20px; }
+  .headline { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 56px; line-height: 1.15; }
+  .headline .accent { color: var(--lavender); }
+  .center-content { position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 32px; }
+  .big-stat { font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 96px; background: linear-gradient(135deg, var(--lavender), var(--sky), var(--mint)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .stat-label { font-family: 'Syne', sans-serif; font-size: 22px; color: var(--dim); font-style: italic; }
+  .body-text { font-size: 18px; line-height: 1.8; color: rgba(255,255,255,0.55); max-width: 800px; }
+  .cta { padding: 20px 48px; background: linear-gradient(135deg, rgba(196,181,253,0.15), rgba(110,231,183,0.15)); border: 1.5px solid var(--accent); border-radius: 12px; font-family: 'Orbitron', sans-serif; font-weight: 800; font-size: 16px; color: var(--accent); letter-spacing: 2px; }
+  .footer { position: relative; z-index: 2; text-align: center; }
+  .brand { font-size: 12px; letter-spacing: 3px; color: var(--dim); }
+  .brand strong { color: var(--lavender); }
+  .swipe { font-family: 'Syne', sans-serif; font-size: 14px; color: var(--dim); margin-top: 12px; font-style: italic; }
+</style>
+</head>
+<body>
+<div class="story">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="orb-1"></div>
+  <div class="orb-2"></div>
+  <div class="orb-3"></div>
+  <div class="header">
+    <div class="tag">ZEROONE D·O·T·S AI</div>
+    <h1 class="headline">[YOUR<br><span class="accent">STORY</span><br>HEADLINE]</h1>
+  </div>
+  <div class="center-content">
+    <div class="big-stat">[STAT]</div>
+    <div class="stat-label">[What the stat means]</div>
+    <p class="body-text">[Your story content goes here. Keep it scannable — stories get 3 seconds of attention.]</p>
+    <div class="cta">[CALL TO ACTION]</div>
+  </div>
+  <div class="footer">
+    <div class="brand"><strong>ZEROONE</strong> D·O·T·S AI</div>
+    <div class="swipe">Swipe up to learn more →</div>
+  </div>
+</div>
+</body>
+</html>

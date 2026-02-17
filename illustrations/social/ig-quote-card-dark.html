@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZeroOne — Quote Card (Dark)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Space+Mono:wght@400;700&family=Syne:wght@400;600&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f; --plum: #2D1B4E; --text: #f0f0f0; --dim: rgba(255,255,255,0.4);
+    --lavender: #C4B5FD; --mint: #6EE7B7; --peach: #FDBA74; --sky: #7DD3FC; --accent: #00e5a0;
+  }
+  body { background: #1a1a2e; font-family: 'Space Mono', monospace; color: var(--text); display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+  .post { width: 1080px; height: 1080px; background: linear-gradient(135deg, var(--bg), var(--plum)); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 100px; }
+  .post::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(196,181,253,0.02) 1px, transparent 1px); background-size: 24px 24px; }
+  /* Quote mark */
+  .quote-mark { font-family: 'Instrument Serif', Georgia, serif; font-size: 200px; line-height: 0.6; color: var(--lavender); opacity: 0.1; position: absolute; top: 80px; left: 80px; z-index: 1; }
+  .corner-tl { position: absolute; top: 16px; left: 16px; width: 40px; height: 40px; border-top: 1.5px solid var(--lavender); border-left: 1.5px solid var(--lavender); opacity: 0.2; }
+  .corner-br { position: absolute; bottom: 16px; right: 16px; width: 40px; height: 40px; border-bottom: 1.5px solid var(--lavender); border-right: 1.5px solid var(--lavender); opacity: 0.2; }
+  .quote { font-family: 'Instrument Serif', Georgia, serif; font-size: 42px; line-height: 1.4; color: var(--text); position: relative; z-index: 2; max-width: 800px; }
+  .attribution { margin-top: 40px; position: relative; z-index: 2; }
+  .author { font-family: 'Space Mono', monospace; font-size: 14px; letter-spacing: 2px; color: var(--lavender); font-weight: 700; }
+  .role { font-family: 'Syne', sans-serif; font-size: 14px; color: var(--dim); margin-top: 6px; }
+  /* Pillar dots */
+  .dots { display: flex; gap: 8px; justify-content: center; margin-top: 32px; position: relative; z-index: 2; }
+  .dots span { width: 8px; height: 8px; border-radius: 50%; }
+  .dots span:nth-child(1) { background: var(--lavender); }
+  .dots span:nth-child(2) { background: var(--mint); }
+  .dots span:nth-child(3) { background: var(--peach); }
+  .dots span:nth-child(4) { background: var(--sky); }
+  .footer { position: absolute; bottom: 48px; left: 48px; right: 48px; display: flex; justify-content: space-between; z-index: 2; }
+  .brand { font-size: 11px; letter-spacing: 2px; color: var(--dim); }
+  .brand strong { color: var(--lavender); }
+  .handle { font-size: 12px; color: var(--dim); }
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="corner-tl"></div>
+  <div class="corner-br"></div>
+  <div class="quote-mark">"</div>
+  <p class="quote">[Your quote goes here — keep it impactful and under three lines]</p>
+  <div class="attribution">
+    <div class="author">[AUTHOR NAME]</div>
+    <div class="role">[Title / Role]</div>
+  </div>
+  <div class="dots"><span></span><span></span><span></span><span></span></div>
+  <div class="footer">
+    <div class="brand"><strong>ZEROONE</strong> D·O·T·S AI</div>
+    <div class="handle">@zeroonedotsai</div>
+  </div>
+</div>
+</body>
+</html>
